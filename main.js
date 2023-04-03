@@ -8,7 +8,7 @@ const words = [
   'TAMALE DE ELOTE',
   'FLAUTAS',
   'CHILE RELLENO',
-  'MENUDO'
+  'MENUDO',
   'BIRRIA'
 ]
 const images = [
@@ -26,11 +26,26 @@ const images = [
 
   /*----- state variables -----*/
 
+  let secretWord;
+  let correctLetters;
+  let incorrectLetters;
+  let secretImg;
+  let guessRemaining;
+
 
   /*----- cached elements  -----*/
 
+  const playAgainBtn = document.querySelector('footer');
+  const keyBtn = document.querySelector('.key-btn');
 
   /*----- event listeners -----*/
 
 
+
+playAgainBtn.addEventListener('click', initalize)
   /*----- functions -----*/
+  initalize();
+
+  function initalize() {
+    const newImg = new Image(../img)
+  }

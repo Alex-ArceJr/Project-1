@@ -1,8 +1,16 @@
-body {
+  body {
   height: 100%;
   width: 100%;
   background-color: rgba(8, 81, 13, 0.703);
   font-family: 'Figtree', sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
 }
 
 header {
@@ -11,19 +19,34 @@ header {
   align-items: center;
   color: white;
   padding-top: 2.7rem;
+  flex-direction: column;
 }
 
-h2 {
+/* h2 {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 45rem;
-  margin-top: 5rem;
-}
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  flex-direction: ;
+} */
 
 .key-btn {
-  display: flex;
+  display: grid;
+  grid-template-columns:  10vmin 10vmin 10vmin;
+  margin-left: 7rem;;
   flex-direction: column;
-  width: 10%;
+  margin-top: -10rem;
+  height: 10vmin;
+  flex-wrap: wrap;
+
+
+}
+.key-btn > button {
+  color: black;
+  height: 4vmin;
+  background-color: white;
+  border-radius: 2vmin;
+  padding: 5px 10px;
 
 }
 
@@ -31,14 +54,119 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 6rem;
+  margin-top: 16rem;
 }
 
 img {
   border: solid red;
   display: inline-flex;
-  justify-content: flex-end;
-  margin-left: 65rem;
-  width: 19rem;
-
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  width: 35vmin;
+  height: 75vmin;
+  border-radius: 40%;
 }
+
+.play-again {
+  border-radius: 2vmin;
+  border: black solid 2px;
+  background-color: rgb(124, 7, 7);
+  color: white;
+  padding: 10px 20px;
+  margin-top: 3rem;
+}
+
+
+/* Set margin and padding to 0 for the whole page */
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 32px;
+}
+
+/* Style the main section
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+/* Style the guesses section
+.guesses {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style the image
+#food-pic {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Style the button container *
+.key-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style the buttons *
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Style the play again button *
+.play-again {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Style the buttons when disabled *
+button[disabled] {
+  background-color: #ccc;
+  cursor: default;
+}
+
+/* Style the buttons when guessed incorrectly *
+button.incorrect {
+  background-color: #FF4136;
+}
+
+/* Style the buttons when guessed correctly *
+button.correct {
+  background-color: #2ECC40;
+} */
