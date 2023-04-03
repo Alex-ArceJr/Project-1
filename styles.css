@@ -1,0 +1,44 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(8, 81, 13, 0.703);
+  font-family: 'Figtree', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-top: 2.7rem;
+}
+
+h2 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 45rem;
+  margin-top: 5rem;
+}
+
+.key-btn {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+img {
+  border: solid red;
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-left: 65rem;
+  width: 19rem;
+
+}
