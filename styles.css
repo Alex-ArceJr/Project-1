@@ -81,3 +81,12 @@ img {
   display: flex;
 
 }
+
+h3 {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+h4 {
+  padding: 1rem;
+}

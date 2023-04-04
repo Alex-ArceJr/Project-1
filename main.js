@@ -35,15 +35,16 @@ const words = [
 
   /*----- cached elements  -----*/
 
-  const playAgainBtn = document.querySelector('footer');
-  const keyBtn = document.querySelectorAll('.key-btn > button');
-  const placeImg = document.getElementById('food-pic');
-  const underScoreText = document.querySelector('.underscore');
+  const playAgainBtn = document.querySelector('footer'); // targets play again button to restart
+  const keyBtn = document.querySelector('.key-btn'); // targets the button to chose from
+  const placeImg = document.getElementById('food-pic'); // will put pictures from array here
+  const underScoreText = document.querySelector('.underscore'); //will put _ of each secret word
+
 
   /*----- event listeners -----*/
 
   playAgainBtn.addEventListener('click', initalize);
-  // keyBtn.addEventListener('click', )
+  keyBtn.addEventListener('click', mainLogic)
 
 
   /*----- functions -----*/
@@ -53,11 +54,8 @@ const words = [
   function initalize() {
     grabSecretWord()
     displayImage()
-
-
-
   }
-  displayUnderScore()
+  // displayUnderScore()
 
   function grabSecretWord() {
     let currentWord = words[Math.floor(Math.random() * words.length)];
@@ -71,7 +69,7 @@ const words = [
 
     console.log(wordLength)
 
-    displayUnderScore(secretWord); // getting the # of underscores
+    displayBoxes(secretWord); // getting the # of underscores
 
   }
 
@@ -80,12 +78,25 @@ const words = [
     console.log(placeImg)
   }
 
-  function displayUnderScore(word) {
+  function displayBoxes(word) {
     console.log(word)
     for(let i = 0; i < word.length; i++){
-
-        let word = document.createElement('h3');
-          word.textContent = '_\u00A0';
-          underScoreText.appendChild(word);
+      if(word[i] === ' ') {
+      let space = document.createElement('h4')
+      underScoreText.appendChild(space)
+      } else {
+        let letter = document.createElement('h3');
+        underScoreText.appendChild(letter);
+      }
     }
   }
+
+function mainLogic(evt) {
+  let box = document.querySelectorAll('h3')
+  let targetLetter = evt.target.textContent
+  for(let i = 0; i < secretWord.length; i++) {
+    if(secretWord[i] === targetLetter) {
+      box[i].innerText = targetLetter
+    }
+  }
+}
