@@ -69,22 +69,25 @@ const words = [
 
     console.log(wordLength)
 
-    displayBoxes(secretWord); // getting the # of underscores
+    displayBoxes(secretWord); // getting the # of boxes
 
   }
 
   function displayImage() {
     placeImg.src = secretImg;
-    console.log(placeImg)
   }
 
   function displayBoxes(word) {
-    console.log(word)
+    // console.log(word)
     for(let i = 0; i < word.length; i++){
       if(word[i] === ' ') {
-      let space = document.createElement('h4')
+        console.log(i)
+        console.log('----')
+      let space = document.createElement('h3')
+      space.classList.add('remove')
       underScoreText.appendChild(space)
       } else {
+        console.log(i)
         let letter = document.createElement('h3');
         underScoreText.appendChild(letter);
       }
