@@ -39,12 +39,12 @@ const words = [
   const keyBtn = document.querySelector('.key-btn'); // targets the button to chose from
   const placeImg = document.getElementById('food-pic'); // will put pictures from array here
   const underScoreText = document.querySelector('.underscore'); //will put _ of each secret word
-
+  const guessLeft = document.querySelector('.guesses') // to change my guesses
 
   /*----- event listeners -----*/
 
   playAgainBtn.addEventListener('click', initalize);
-  keyBtn.addEventListener('click', mainLogic)
+  keyBtn.addEventListener('click', mainLogic);
 
 
   /*----- functions -----*/
@@ -52,8 +52,9 @@ const words = [
   initalize();
 
   function initalize() {
-    grabSecretWord()
-    displayImage()
+    grabSecretWord();
+    displayImage();
+    guessRemaining = 5;
   }
   // displayUnderScore()
 
@@ -65,11 +66,11 @@ const words = [
 
     secretImg = currentWord[1]; // selects image
 
-    let wordLength = secretWord.length
+    let wordLength = secretWord.length;
 
     console.log(wordLength)
 
-    displayBoxes(secretWord); // getting the # of boxes
+    displayBoxes(secretWord); // getting the # of underscores
 
   }
 
@@ -81,13 +82,13 @@ const words = [
     // console.log(word)
     for(let i = 0; i < word.length; i++){
       if(word[i] === ' ') {
-        console.log(i)
-        console.log('----')
-      let space = document.createElement('h3')
-      space.classList.add('remove')
-      underScoreText.appendChild(space)
+        // console.log(i)
+        // console.log('----')
+      let space = document.createElement('h3');
+      space.classList.add('remove');
+      underScoreText.appendChild(space);
       } else {
-        console.log(i)
+        // console.log(i)
         let letter = document.createElement('h3');
         underScoreText.appendChild(letter);
       }
@@ -95,11 +96,23 @@ const words = [
   }
 
 function mainLogic(evt) {
-  let box = document.querySelectorAll('h3')
-  let targetLetter = evt.target.textContent
+  let box = document.querySelectorAll('h3');
+  let targetLetter = evt.target.textContent;
+  let isCorrect = false;
   for(let i = 0; i < secretWord.length; i++) {
     if(secretWord[i] === targetLetter) {
-      box[i].innerText = targetLetter
+      box[i].innerText = targetLetter;
+      isCorrect = true;
     }
   }
+  if (!isCorrect){
+    decreaseGuess()
+  }
+}
+
+function decreaseGuess() {
+  guessRemaining--;
+  guessLeft.innerText = `Intendos ${guessRemaining}/5 `
+
+
 }
