@@ -58,6 +58,7 @@ const words = [
     displayImage();
     guessRemaining = 5;
     correctLetters = 0;
+
   }
   // displayUnderScore()
 
@@ -72,7 +73,7 @@ const words = [
     let wordLength = secretWord.length;
 
     console.log(wordLength)
-
+    underScoreText.innerHTML = ''
     displayBoxes(secretWord); // getting the # of boxes
 
   }
@@ -99,6 +100,7 @@ const words = [
   }
 
 function mainLogic(evt) {
+
   let box = document.querySelectorAll('h3');
   let targetLetter = evt.target.textContent;
   let isCorrect = false;
@@ -123,14 +125,12 @@ function decreaseGuess() {
 }
 
 function checkWinner() {
+  if(displayMessage.innerText !== ''){
+    return
+  }
   if(correctLetters === secretWord.length ) {
-    console.log('you win')
     displayMessage.innerText = 'Ganaste!'
   } else if (guessRemaining ===  0) {
    displayMessage.innerText = 'Intenta Otra Vez!'
   }
-}
-
-function render() {
-
 }
