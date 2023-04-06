@@ -12,9 +12,7 @@ main {
   flex-direction: column;
   height: 50vh;
 }
-img {
-  width: 100%;
-}
+
 header {
   display: flex;
   justify-content: center;
@@ -23,14 +21,6 @@ header {
   padding-top: 2.7rem;
   flex-direction: column;
 }
-
-/* h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  flex-direction: ;
-} */
 
 .key-btn {
   display: grid;
@@ -44,9 +34,9 @@ header {
 
 }
 .key-btn > button {
-  color: black;
+  color: white;
   height: 4vmin;
-  background-color: white;
+  background-color: rgba(203, 19, 19, 0.835);
   border-radius: 2vmin;
   padding: 5px 10px;
 
@@ -56,18 +46,18 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 16rem;
+  margin-top: 35vmin;
 }
 
 img {
-  border: solid red;
-  display: inline-flex;
+  border: solid white 5px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 20vmin;
   width: 35vmin;
   height: 75vmin;
-  border-radius: 40%;
+  border-radius: 20%;
 }
 
 .play-again {
@@ -87,7 +77,7 @@ img {
 
 h3 {
   border: 1px solid black;
-  padding: 1rem;
+  padding: 2vmin;
 }
 
  .remove {
@@ -100,7 +90,7 @@ h3 {
     right : 43%;
     background-color: transparent;
     color: #000;
-    font-size: 1rem;
+    font-size: 3.5vmin;
     padding: 1rem;
     font-family: 'STIX Two Text', serif;
  }
