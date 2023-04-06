@@ -9,7 +9,7 @@ const words = [
   ['FLAUTAS', 'IMG/FLAUTAS.png'],
   ['CHILE RELLENO', 'IMG/chile-rellenos.png'],
   ['MENUDO', 'IMG/MENUDO.png'],
-  ['BIRRIA', 'IMG/birria.png']
+  ['BIRRIA', 'IMG/Birria.png']
 ]
 
   /*----- state variables -----*/
