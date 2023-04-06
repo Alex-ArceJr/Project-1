@@ -33,6 +33,7 @@ const words = [
   let guessRemaining;
 
 
+
   /*----- cached elements  -----*/
 
   const playAgainBtn = document.querySelector('footer'); // targets play again button to restart
@@ -40,6 +41,7 @@ const words = [
   const placeImg = document.getElementById('food-pic'); // will put pictures from array here
   const underScoreText = document.querySelector('.underscore'); //will put _ of each secret word
   const guessLeft = document.querySelector('.guesses') // to change my guesses
+  const displayMessage = document.getElementById('display-result') // message to display winner/loser
 
   /*----- event listeners -----*/
 
@@ -55,13 +57,14 @@ const words = [
     grabSecretWord();
     displayImage();
     guessRemaining = 5;
+    correctLetters = 0;
   }
   // displayUnderScore()
 
   function grabSecretWord() {
     let currentWord = words[Math.floor(Math.random() * words.length)];
 
-    secretWord = currentWord[0]; //selects words
+    secretWord = currentWord[0].split(''); //selects words
     console.log(secretWord)
 
     secretImg = currentWord[1]; // selects image
@@ -70,7 +73,7 @@ const words = [
 
     console.log(wordLength)
 
-    displayBoxes(secretWord); // getting the # of underscores
+    displayBoxes(secretWord); // getting the # of boxes
 
   }
 
@@ -103,16 +106,31 @@ function mainLogic(evt) {
     if(secretWord[i] === targetLetter) {
       box[i].innerText = targetLetter;
       isCorrect = true;
-    }
+      correctLetters++;
+      secretWord.splice(i, 1, '')
+      console.log(secretWord)
+     }
   }
-  if (!isCorrect){
-    decreaseGuess()
+if(!isCorrect) {
+  decreaseGuess()
   }
+  checkWinner()
 }
 
 function decreaseGuess() {
   guessRemaining--;
   guessLeft.innerText = `Intendos ${guessRemaining}/5 `
+}
 
+function checkWinner() {
+  if(correctLetters === secretWord.length ) {
+    console.log('you win')
+    displayMessage.innerText = 'Ganaste!'
+  } else if (guessRemaining ===  0) {
+   displayMessage.innerText = 'Intenta Otra Vez!'
+  }
+}
+
+function render() {
 
 }
