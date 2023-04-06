@@ -58,7 +58,8 @@ const words = [
     displayImage();
     guessRemaining = 5;
     correctLetters = 0;
-
+    displayMessage.innerHTML = ''
+    guessLeft.innerText = `Intendos ${guessRemaining}/5 `
   }
   // displayUnderScore()
 
@@ -83,16 +84,12 @@ const words = [
   }
 
   function displayBoxes(word) {
-    // console.log(word)
     for(let i = 0; i < word.length; i++){
       if(word[i] === ' ') {
-        // console.log(i)
-        // console.log('----')
       let space = document.createElement('h3');
       space.classList.add('remove');
       underScoreText.appendChild(space);
       } else {
-        // console.log(i)
         let letter = document.createElement('h3');
         underScoreText.appendChild(letter);
       }
@@ -113,9 +110,11 @@ function mainLogic(evt) {
       console.log(secretWord)
      }
   }
-if(!isCorrect) {
-  decreaseGuess()
+    if(!isCorrect && guessRemaining !== 0 && displayMessage.innerText === '') {
+    decreaseGuess()
+    console.log(displayMessage)
   }
+  // displayMessage.innerHTML = '';
   checkWinner()
 }
 
