@@ -49,19 +49,16 @@ const words = [
     displayMessage.innerHTML = ''
     guessLeft.innerText = `Intendos ${guessRemaining}/5 `
   }
-  // displayUnderScore()
 
   function grabSecretWord() {
     let currentWord = words[Math.floor(Math.random() * words.length)];
 
     secretWord = currentWord[0].split(''); //selects words
-    console.log(secretWord)
 
     secretImg = currentWord[1]; // selects image
 
     let wordLength = secretWord.length;
 
-    console.log(wordLength)
     underScoreText.innerHTML = ''
     displayBoxes(secretWord); // getting the # of boxes
 
@@ -70,7 +67,7 @@ const words = [
   function displayImage() {
     placeImg.src = secretImg;
   }
-
+// displays boxes on screen
   function displayBoxes(word) {
     for(let i = 0; i < word.length; i++){
       if(word[i] === ' ') {
@@ -83,9 +80,8 @@ const words = [
       }
     }
   }
-
+// Looking for correct letters and will decrease amount of guesses if wrong
 function mainLogic(evt) {
-
   let box = document.querySelectorAll('h3');
   let targetLetter = evt.target.textContent;
   let isCorrect = false;
@@ -95,22 +91,19 @@ function mainLogic(evt) {
       isCorrect = true;
       correctLetters++;
       secretWord.splice(i, 1, '')
-      console.log(secretWord)
      }
   }
     if(!isCorrect && guessRemaining !== 0 && displayMessage.innerText === '') {
     decreaseGuess()
-    console.log(displayMessage)
   }
-  // displayMessage.innerHTML = '';
   checkWinner()
 }
-
+// player chooses wrong letter guesses decrease by one
 function decreaseGuess() {
   guessRemaining--;
   guessLeft.innerText = `Intendos ${guessRemaining}/5 `
 }
-
+//display winning/losing message
 function checkWinner() {
   if(displayMessage.innerText !== ''){
     return
