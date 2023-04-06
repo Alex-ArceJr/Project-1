@@ -1,28 +1,16 @@
   /*----- constants -----*/
 const words = [
-  ['TACOS GOBERNADOR', 'img/tacos-gobernador.png'],
-  ['SOPE', 'img/SOPE.png'],
-  ['AGUACHILE', 'img/aguachile.png'],
-  ['CHILORIO', 'img/CHILORIO.png'],
-  ['TOSTADAS', 'img/TOSTADA.png'],
-  ['TAMALE DE ELOTE', 'img/TAMALE.png'],
-  ['FLAUTAS', 'img/FLAUTAS.png'],
-  ['CHILE RELLENO', 'img/chile-rellenos.png'],
-  ['MENUDO', 'img/MENUDO.png'],
-  ['BIRRIA', 'img/birria.png']
+  ['TACOS GOBERNADOR', 'IMG/tacos-gobernador.png'],
+  ['SOPE', 'IMG/SOPE.png'],
+  ['AGUACHILE', 'IMG/aguachile.png'],
+  ['CHILORIO', 'IMG/CHILORIO.png'],
+  ['TOSTADAS', 'IMG/TOSTADA.png'],
+  ['TAMALE DE ELOTE', 'IMG/TAMALE.png'],
+  ['FLAUTAS', 'IMG/FLAUTAS.png'],
+  ['CHILE RELLENO', 'IMG/chile-rellenos.png'],
+  ['MENUDO', 'IMG/MENUDO.png'],
+  ['BIRRIA', 'IMG/birria.png']
 ]
-// const images = [
-//   'url(img/tacos-gobernador.png)',
-//   'url(img/SOPE.png)',
-//   'url(img/aguachile.png)',
-//   'url(img/CHILORIO.png)',
-//   'url(img/TOSTADA.png)',
-//   'url(img/TAMALE.png)',
-//   'url(img/FLAUTAS.png)',
-//   'url(img/chile-rellenos.png)',
-//   'url(img/MENUDO.png)',
-//   'url(img/birria.png)'
-// ]
 
   /*----- state variables -----*/
 
@@ -36,7 +24,7 @@ const words = [
 
   /*----- cached elements  -----*/
 
-  const playAgainBtn = document.querySelector('footer'); // targets play again button to restart
+  const playAgainBtn = document.querySelector('.play-again'); // targets play again button to restart
   const keyBtn = document.querySelector('.key-btn'); // targets the button to chose from
   const placeImg = document.getElementById('food-pic'); // will put pictures from array here
   const underScoreText = document.querySelector('.underscore'); //will put _ of each secret word
