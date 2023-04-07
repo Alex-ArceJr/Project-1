@@ -24,4 +24,4 @@ The game automatically renders upon loading. Click on button options to get game
  
 ## Next Steps:
 - Improve styling
-- Responsive buttons
+- Add additional buttons
