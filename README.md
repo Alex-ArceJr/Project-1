@@ -1,4 +1,4 @@
-# Abuelita's Reciepe
+# Abuelita's Recipe
 
 A spaceman game with a personal twist and is Spanish based. This game is themed around the recipes my Grandmother would make for me as a child.  I've created this game to showcase my Grandmothers dishes and culture in her memory.
 
